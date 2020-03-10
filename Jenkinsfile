@@ -1,10 +1,13 @@
 node() {
     def myImg
-    stage ("Build image") {
-        // download the dockerfile to build from
+    stage ("Get image") {
         git 'http://localhost:3000/Vetch/DockerBaseTest.git'
 
-        // build our docker image
+    }
+    stage("Build image"){
         myImg = docker.build("dockerpyrdf .","--network='host'")
+    }
+    stage("Run image"){
+        docker.build(myImg)
     }
 }
