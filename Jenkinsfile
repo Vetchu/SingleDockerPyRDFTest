@@ -4,7 +4,7 @@ node() {
         git 'http://localhost:3000/Vetch/DockerBaseTest.git'
     }
     stage("Build image"){
-        pyrdf_docker = docker.build("dockerpyrdf .","--network='host'")
+        pyrdf_docker = docker.build("dockerpyrdf","--network='host' .")
     }
     stage("Run image"){
         pyrdf_docker.inside{
