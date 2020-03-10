@@ -8,7 +8,7 @@ node() {
     }
     stage("Run image"){
         pyrdf_docker.inside{
-            sh '. /cern_root/root/bin/thisroot.sh && python2 PyRDF/introduction.py'
+            sh '. /cern_root/root/bin/thisroot.sh && python2 ~/PyRDF/introduction.py'
         }
     }
 }
