@@ -5,6 +5,6 @@ node() {
         git 'http://localhost:3000/Vetch/DockerBaseTest.git'
 
         // build our docker image
-        myImg = docker.build("dockerpyrdf","--network='host'")
+        myImg = docker.build("dockerpyrdf .","--network='host'")
     }
 }
