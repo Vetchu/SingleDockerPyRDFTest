@@ -14,7 +14,7 @@ RUN yum install -y git python2 libXft cmake gcc-c++ gcc binutils \
     
 RUN . ${roothome}/bin/thisroot.sh && root
 RUN yum install -y epel-release && yum install -y python-pip pandoc
-RUN git clone https://github.com/JavierCVilla/PyRDF
-RUN pip install --upgrade pip && pip install wheel && pip install -r PyRDF/requirements.txt && pip install  pyspark --no-cache-dir
-RUN curl https://raw.githubusercontent.com/JavierCVilla/PyRDF/master/tutorials/local/sequential/df001_introduction.py > PyRDF/introduction.py
-CMD . ${roothome}/bin/thisroot.sh && python2 PyRDF/introduction.py
+RUN git clone https://github.com/JavierCVilla/PyRDF ${roothome}/PyRDF
+RUN pip install --upgrade pip && pip install wheel && pip install -r ${roothome}/PyRDF/requirements.txt && pip install  pyspark --no-cache-dir
+RUN curl https://raw.githubusercontent.com/JavierCVilla/PyRDF/master/tutorials/local/sequential/df001_introduction.py > ${roothome}/PyRDF/introduction.py
+CMD . ${roothome}/bin/thisroot.sh && python2 ${roothome}/PyRDF/introduction.py
