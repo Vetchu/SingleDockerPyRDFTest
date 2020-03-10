@@ -7,6 +7,6 @@ node() {
         myImg = docker.build("dockerpyrdf .","--network='host'")
     }
     stage("Run image"){
-        docker.build("dockerpyrdf")
+        docker.run("dockerpyrdf")
     }
 }
